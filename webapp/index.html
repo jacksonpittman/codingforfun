@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>You're a frog, but how strong are you?</title>
+<style>
+body {
+background-color: #99E599;
+font-family: Helvetica;
+}
+
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: #98fb98;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid green;
+padding: 5px;
+height: 250px;
+background: green;
+background-image: ;
+color: white;
+}
+  
+label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+</style>
+
+
+</head>
+
+<body>
+<div id="main"><!-- open main div -->
+<div id="header"><!-- open header div -->
+<h1>How strong are you, frog?</h1>
+</div><!-- close header div -->
+
+<h1>Let us determine the strength of your frog.</h1>
+<form id="form1">
+
+<h2>Which Taco Bell hot sauce is going in your bag?</h2>
+<label for="mild"><input type="radio" name="sauce" value="1" id="mild" />Mild</label>
+<label for="hot"><input type="radio" name="sauce" value="3" id="hot" />Hot</label>
+<label for="fire"><input type="radio" name="sauce" value="5" id="fire" />Fire</label>
+<label for="diablo"><input type="radio" name="sauce" value="7" id="diablo"/>Diablo</label>
+
+<h2>What's your bench frog bro?</h2>
+<label for="none"><input type="radio" name="bench" value="1" id="none"/>My what?</label>
+<label for="bar"><input type="radio" name="bench" value="3" id="bar"/>Probably just the bar</label>
+<label for="oneplate"><input type="radio" name="bench" value="5" id="oneplate" />I'm repping atleast a plate</label>
+<label for="chad"><input type="radio" name="bench" value="7" id="chad" />I'm maxxing out frog bro</label>
+
+<h2>There is a princess frog in distress, what's your first move?</h2>
+<label for="wimp"><input type="radio" name="princess" value="1" id="wimp" />nah, she's good</label>
+<label for="shrek"><input type="radio" name="princess" value="3" id="shrek" />Like in the movie Shrek?</label>
+<label for="notprince"><input type="radio" name="princess" value="5" id="notprince" />Yeah, but I ain't kissing her</label>
+<label for="alphabro"><input type="radio" name="princess" value="7" id="alphabro" />It would be my honor</label>
+
+<h2>Cargo Shorts?</h2>
+<label for="yuck"><input type="radio" name="cargoshorts" value="1" id="yuck" />What did you just say to me?</label>
+<label for="zipper"><input type="radio" name="cargoshorts" value="3" id="zipper" />Please don't look at my legs</label>
+<label for="pockets"><input type="radio" name="cargoshorts" value="5" id="pockets" />Of course. For my many pocket needs.</label>
+<label for="alot"><input type="radio" name="cargoshorts"  value="7" id="alot" />I have them in every color.</label>
+  
+  
+
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+<p>Your frog is: <span id="grade">__</span></p>
+<p id="grade2"></p>
+
+
+</form>
+</div>
+<script>
+
+
+     document.getElementById("form1").onsubmit=function() {
+     
+     
+    sauce = parseInt(document.querySelector('input[name = "sauce"]:checked').value);  
+    
+    bench = parseInt(document.querySelector('input[name = "bench"]:checked').value);
+     
+    princess = parseInt(document.querySelector('input[name = "princess"]:checked').value);
+
+    cargoshorts = parseInt(document.querySelector('input[name = "cargoshorts"]:checked').value);
+     
+    total = sauce + bench + princess + cargoshorts;
+     
+    
+     document.getElementById("grade").innerHTML = total; 
+
+   if(total <= 8) {
+document.getElementById("grade2").innerHTML = "Tadpole <br /> <img src='tadpole.jpeg' width='300' />";
+}
+
+   if(total >=9 && total < 14) {
+document.getElementById("grade2").innerHTML = "Avg Joe <br /> <img src='/joefrog.jpeg' width='300' />";
+}
+  
+  if(total >=15 && total < 21) {
+document.getElementById("grade2").innerHTML = "Chad Frog <br /> <img src='chad.jpeg' width='300' />";
+}   
+if(total >=22 && total < 36) {
+document.getElementById("grade2").innerHTML = "Hulk Frog <br /> <img src='hulk.jpeg' width='300' />";
+}   
+     
+  
+     return false; 
+     }// 
+</script>
+
+</body>
+</html>
